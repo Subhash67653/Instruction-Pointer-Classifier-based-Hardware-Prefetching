@@ -1,0 +1,224 @@
+#include "cache.h"
+#include <bitset>
+#include <cstdint>
+#include <cmath>
+#define NUM_OFFSET 46
+#define SCORE_MAX 31
+#define ROUND_MAX 100
+#define RRINDEX 6
+#define RRTAG 12
+int OFFSET[NUM_OFFSET] ;
+void set_offset(){
+  for(int u=0;u<16;u++){
+    OFFSET[u]=u+1;
+  }
+  for(int u=16;u<32;u++){
+    OFFSET[u]=(15-u);
+  }
+  OFFSET[32]=18;OFFSET[33]=-18;OFFSET[34]=20;OFFSET[35]=-20;OFFSET[36]=24;OFFSET[37]=-24;OFFSET[38]=30;OFFSET[39]=-30;OFFSET[40]=32;OFFSET[41]=-32;OFFSET[42]=36;OFFSET[43]=-36;OFFSET[44]=40;OFFSET[45]=-40;
+}
+void INCREASE_CHECK(int &p, const int q)
+{
+  p = p + 1;
+  if (p == q)
+  {
+    p = 0;
+  }
+  return;
+}
+uint64_t BIT_REDUCE(uint64_t y, uint64_t z)
+{
+  uint64_t red = pow(2, z) - 1;
+  red = y & red;
+  return red;
+}
+int PRE_OFF; // 7 bits (6-bit value + 1 sign bit)
+int RR[2][1 << RRINDEX];
+int PRE_BIT[L2C_SET][L2C_WAY];
+
+void RR_INTIALIZE()
+{
+  int p = (1 << RRINDEX);
+  for (int q = 0; q < p; q++)
+  {
+    RR[0][q] = 0;
+    RR[1][q] = 0;
+  }
+}
+int RR_TAG(long long A)
+{
+  return BIT_REDUCE(A >> RRINDEX, RRTAG);
+}
+int RR_LINDEX(long long A)
+{
+  int B = A >> RRINDEX;
+  return BIT_REDUCE(A ^ B, RRINDEX);
+}
+
+int RR_RINDEX(long long A)
+{
+  int B = A >> (2 * RRINDEX);
+  return BIT_REDUCE(A ^ B, RRINDEX);
+}
+
+void RR_LINSERT(long long A)
+{
+  int Q = RR_LINDEX(A);
+  RR[0][Q] = RR_TAG(A);
+}
+
+void RR_RINSERT(long long A)
+{
+  int Q = RR_RINDEX(A);
+  RR[1][Q] = RR_TAG(A);
+}
+
+int RRHIT(long long lineaddr)
+{
+  int P = RR_LINDEX(lineaddr);
+  int Q = RR_RINDEX(lineaddr);
+  int R = RR_TAG(lineaddr);
+  bool a= (RR[0][P] == R);
+  bool b=(RR[1][Q] == R);
+  bool c= (a || b);
+  return c;
+}
+struct offsets_scores
+{
+  int score[NUM_OFFSET]; // log2 SCORE_MAX = 5 bits per entry
+  int max_s;       // log2 SCORE_MAX = 5 bits
+  int best_offset;     // 7 bits (6-bit value + 1 sign bit)
+  int cur_round;           // log2 ROUND_MAX = 7 bits
+  int level;               // log2 NUM_OFFSET = 6 bits
+} offset_check;
+void SCORE_RESET()
+{
+  int i;
+  for (i = 0; i < 46; i++)
+  {
+    offset_check.score[i] = 0;
+  }
+  offset_check.best_offset = 0;
+  offset_check.cur_round = 0;
+  offset_check.max_s = 0;
+  offset_check.level = 0;
+}
+
+void FIND_BEST_OFFSET(long long A)
+{
+  int cur_offset = OFFSET[offset_check.level];
+  long long PAST_ADDR = A - cur_offset;
+
+  if (RRHIT(PAST_ADDR))
+  {
+    // the current line would likely have been prefetched successfully with that offset
+    // ==> increment the score
+    offset_check.score[offset_check.level]++;
+    if (offset_check.score[offset_check.level] >= offset_check.max_s)
+    {
+      offset_check.max_s = offset_check.score[offset_check.level];
+      offset_check.best_offset = cur_offset;
+    }
+  }
+
+  if (offset_check.level == (NUM_OFFSET - 1))
+  {
+    offset_check.cur_round++;
+
+    if (offset_check.max_s == SCORE_MAX )
+    { 
+      if(offset_check.best_offset !=0){
+        PRE_OFF= offset_check.best_offset;
+      }
+      else{
+        PRE_OFF=1;
+      }
+
+      if (offset_check.max_s <= 10)
+      {
+        
+        PRE_OFF = 0;
+      }
+      SCORE_RESET();
+      return;
+    }
+    else if(offset_check.cur_round == ROUND_MAX){
+     if(offset_check.best_offset !=0){
+        PRE_OFF= offset_check.best_offset;
+      }
+      else{
+        PRE_OFF=1;
+      }
+
+      if (offset_check.max_s <= 10)
+      {
+        
+        PRE_OFF = 0;
+      }
+      SCORE_RESET();
+      return; 
+    } 
+  }
+  INCREASE_CHECK(offset_check.level, NUM_OFFSET); // prepare to test the next offset
+}
+
+void CACHE::l2c_prefetcher_initialize()
+{
+  cout << "CPU " << cpu << " L2C BEST OFFSET prefetcher" << endl;
+  PRE_OFF = 1;
+  RR_INTIALIZE();
+  SCORE_RESET();
+  set_offset();
+  int i, j;
+  for (i = 0; i < L2C_SET; i++)
+  {
+    for (j = 0; j < L2C_WAY; j++)
+    {
+      PRE_BIT[i][j] = 0;
+    }
+  }
+}
+
+uint32_t CACHE::l2c_prefetcher_operate(uint64_t addr, uint64_t ip, uint8_t cache_hit, uint8_t type, uint32_t metadata_in)
+{
+  if (type != LOAD)
+    return metadata_in;
+  long long lineaddr = addr >> 6;
+  int cur_set = get_set(addr);
+  int cur_way = get_way(addr, cur_set);
+  if (cur_way>=0)
+  {
+    PRE_BIT[cur_set][cur_way] = 0;
+  }
+    FIND_BEST_OFFSET(lineaddr);
+    prefetch_line(ip, lineaddr << 6, (lineaddr + PRE_OFF) << 6, FILL_L2, 0);
+ 
+  return metadata_in;
+}
+
+uint32_t CACHE::l2c_prefetcher_cache_fill(
+    uint64_t addr, uint32_t set, uint32_t way, uint8_t prefetch, uint64_t evicted_addr, uint32_t metadata_in)
+{
+  long long B = addr >> 6;
+
+  // write the prefetch bit
+  int cur_set = get_set(addr);
+  int cur_way = get_way(addr, cur_set);
+  PRE_BIT[cur_set][cur_way] = prefetch;
+
+  // write the "right" bank of the RR table
+  long long A;
+  A=B-PRE_OFF;
+  if(prefetch){
+     RR_RINSERT(A);
+  }
+  else if(PRE_OFF == 0){
+     RR_RINSERT(A);
+  }
+ 
+
+  return metadata_in;
+}
+
+void CACHE::l2c_prefetcher_final_stats() { cout << "CPU " << cpu << " L2C BEST OFFSET prefetcher final stats" << endl; }
+
