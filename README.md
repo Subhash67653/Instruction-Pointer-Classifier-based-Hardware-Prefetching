@@ -8,6 +8,8 @@ Code for all prefetchers are in /prefetchers folder
 
 The simulation results for all the prefetchers are in /resulst_30M folder
 
+We have added code and its result for each enhancement we implemented in ENHANCEMENTS_GRAPHS for graph traces and ENHANCEMENTS_SPEC for spec traces
+
 ### Group Members 
 
 | __Name__ |  __Roll__ |
