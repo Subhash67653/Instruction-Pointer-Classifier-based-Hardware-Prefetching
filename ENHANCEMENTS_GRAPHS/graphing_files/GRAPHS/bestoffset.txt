@@ -1,0 +1,12 @@
+bc-0.trace.gz 0.126618 instructions: 30000000 cycles: 236932268
+bc-5.trace.gz 0.199368 instructions: 30000003 cycles: 150475279
+bfs-14.trace.gz 0.382921 instructions: 30000002 cycles: 78345186
+bfs-3.trace.gz 0.350089 instructions: 30000002 cycles: 85692408
+bfs-8.trace.gz 0.455524 instructions: 30000002 cycles: 65858276
+cc-14.trace.gz 0.194694 instructions: 30000001 cycles: 154088184
+cc-5.trace.gz 0.242357 instructions: 30000000 cycles: 123784176
+pr-10.trace.gz 0.0477712 instructions: 30000002 cycles: 627993797
+pr-14.trace.gz 0.0440108 instructions: 30000002 cycles: 681650144
+pr-5.trace.gz 0.0413333 instructions: 30000000 cycles: 725807509
+sssp-14.trace.gz 0.300816 instructions: 30000001 cycles: 99728800
+sssp-5.trace.gz 0.299692 instructions: 30000003 cycles: 100102808

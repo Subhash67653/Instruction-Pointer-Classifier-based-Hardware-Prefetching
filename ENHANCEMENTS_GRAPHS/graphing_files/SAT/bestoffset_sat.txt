@@ -1,0 +1,3 @@
+cadical-high-60K-1227B 0.186198 instructions: 30000000 cycles: 161118709
+cadical-high-60K-134B 0.176633 instructions: 30000000 cycles: 169844121
+kissat-inc-high-30K-1802B 0.316761 instructions: 30000003 cycles: 94708681
