@@ -34,9 +34,13 @@ https://dpc3.compas.cs.stonybrook.edu/champsim-traces/speccpu/
 
 https://www.dropbox.com/sh/xs2t9y4cuqlgrlp/AACpzGOj6BcSB-BUolGaBjbta?dl=0
 
-For ruuning code for each enhancement
+ running  for each enhancement
 
-For graph traces go to /ENHANCEMENTS_GRAPHS/(select one folder)/code/ or For spec traces go to /ENHANCEMENTS_SPEC/(select one folder)/code/
+For graph traces go to /ENHANCEMENTS_GRAPHS/(select one folder)/code/ 
+
+or
+
+For spec traces go to /ENHANCEMENTS_SPEC/(select one folder)/code/
 
 run ./build_champsim.sh [branch_pred] [l1i_pref] [l1d_pref] [l2c_pref] [llc_pref] [llc_repl] [num_core]
 
