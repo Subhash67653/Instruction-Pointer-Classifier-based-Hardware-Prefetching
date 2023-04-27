@@ -1,0 +1,79 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 30000000
+Simulation Instructions: 30000000
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+CPU 0 runs ../traces//bc-0.trace.gz
+CPU 0 Bimodal branch predictor
+Heartbeat CPU 0 instructions: 10000002 cycles: 3878805 heartbeat IPC: 2.57811 cumulative IPC: 2.57811 (Simulation time: 0 hr 0 min 13 sec) 
+Heartbeat CPU 0 instructions: 20000000 cycles: 7301824 heartbeat IPC: 2.9214 cumulative IPC: 2.73904 (Simulation time: 0 hr 0 min 27 sec) 
+Heartbeat CPU 0 instructions: 30000003 cycles: 10725277 heartbeat IPC: 2.92103 cumulative IPC: 2.79713 (Simulation time: 0 hr 0 min 41 sec) 
+
+Warmup complete CPU 0 instructions: 30000003 cycles: 10725277 (Simulation time: 0 hr 0 min 41 sec) 
+
+Heartbeat CPU 0 instructions: 40000002 cycles: 90894394 heartbeat IPC: 0.124736 cumulative IPC: 0.124736 (Simulation time: 0 hr 1 min 15 sec) 
+Heartbeat CPU 0 instructions: 50000000 cycles: 171656812 heartbeat IPC: 0.12382 cumulative IPC: 0.124276 (Simulation time: 0 hr 1 min 49 sec) 
+Heartbeat CPU 0 instructions: 60000003 cycles: 252490812 heartbeat IPC: 0.12371 cumulative IPC: 0.124087 (Simulation time: 0 hr 2 min 22 sec) 
+Finished CPU 0 instructions: 30000000 cycles: 241765535 cumulative IPC: 0.124087 (Simulation time: 0 hr 2 min 22 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.124087 instructions: 30000000 cycles: 241765535
+L1D TOTAL     ACCESS:   15378054  HIT:    6952152  MISS:    8425902
+L1D LOAD      ACCESS:    6823768  HIT:    4637229  MISS:    2186539
+L1D RFO       ACCESS:    1553385  HIT:    1540895  MISS:      12490
+L1D PREFETCH  ACCESS:    7000901  HIT:     774028  MISS:    6226873
+L1D WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1D PREFETCH  REQUESTED:   11064005  ISSUED:    8137783  USEFUL:     313072  USELESS:    5913696
+L1D AVERAGE MISS LATENCY: 170.769 cycles
+L1I TOTAL     ACCESS:    5649889  HIT:    5649889  MISS:          0
+L1I LOAD      ACCESS:    5649889  HIT:    5649889  MISS:          0
+L1I RFO       ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1I WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1I AVERAGE MISS LATENCY: -nan cycles
+L2C TOTAL     ACCESS:   15341344  HIT:    2693850  MISS:   12647494
+L2C LOAD      ACCESS:    1992582  HIT:      96142  MISS:    1896440
+L2C RFO       ACCESS:      12490  HIT:        209  MISS:      12281
+L2C PREFETCH  ACCESS:   12564913  HIT:    1826654  MISS:   10738259
+L2C WRITEBACK ACCESS:     771359  HIT:     770845  MISS:        514
+L2C PREFETCH  REQUESTED:   19786420  ISSUED:   19630180  USEFUL:      78379  USELESS:   10658819
+L2C AVERAGE MISS LATENCY: 188.76 cycles
+LLC TOTAL     ACCESS:   13417610  HIT:    3594030  MISS:    9823580
+LLC LOAD      ACCESS:    1773183  HIT:     361225  MISS:    1411958
+LLC RFO       ACCESS:      12281  HIT:        124  MISS:      12157
+LLC PREFETCH  ACCESS:   10861517  HIT:    2462436  MISS:    8399081
+LLC WRITEBACK ACCESS:     770629  HIT:     770245  MISS:        384
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:     209952  USELESS:    8184237
+LLC AVERAGE MISS LATENCY: 195.041 cycles
+Major fault: 0 Minor fault: 10833
+
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:    5214812  ROW_BUFFER_MISS:    4607455
+ DBUS_CONGESTED:    5815805
+ WQ ROW_BUFFER_HIT:      63341  ROW_BUFFER_MISS:     698523  FULL:          0
+
+ AVG_CONGESTED_CYCLE: 6
+
+CPU 0 Branch Prediction Accuracy: 84.3239% MPKI: 29.507 Average ROB Occupancy at Mispredict: 30.83
+
+Branch types
+NOT_BRANCH: 24352865 81.1762%
+BRANCH_DIRECT_JUMP: 99781 0.332603%
+BRANCH_INDIRECT: 0 0%
+BRANCH_CONDITIONAL: 5547078 18.4903%
+BRANCH_DIRECT_CALL: 6 2e-05%
+BRANCH_INDIRECT_CALL: 0 0%
+BRANCH_RETURN: 6 2e-05%
+BRANCH_OTHER: 0 0%
+

@@ -1,0 +1,79 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 30000000
+Simulation Instructions: 30000000
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+CPU 0 runs ../traces//sssp-5.trace.gz
+CPU 0 Bimodal branch predictor
+Heartbeat CPU 0 instructions: 10000001 cycles: 3718491 heartbeat IPC: 2.68926 cumulative IPC: 2.68926 (Simulation time: 0 hr 0 min 12 sec) 
+Heartbeat CPU 0 instructions: 20000000 cycles: 7711184 heartbeat IPC: 2.50458 cumulative IPC: 2.59364 (Simulation time: 0 hr 0 min 25 sec) 
+Heartbeat CPU 0 instructions: 30000003 cycles: 11850920 heartbeat IPC: 2.41561 cumulative IPC: 2.53145 (Simulation time: 0 hr 0 min 40 sec) 
+
+Warmup complete CPU 0 instructions: 30000003 cycles: 11850920 (Simulation time: 0 hr 0 min 40 sec) 
+
+Heartbeat CPU 0 instructions: 40000003 cycles: 46800447 heartbeat IPC: 0.286127 cumulative IPC: 0.286127 (Simulation time: 0 hr 1 min 3 sec) 
+Heartbeat CPU 0 instructions: 50000003 cycles: 78968438 heartbeat IPC: 0.310868 cumulative IPC: 0.297985 (Simulation time: 0 hr 1 min 26 sec) 
+Heartbeat CPU 0 instructions: 60000002 cycles: 111890588 heartbeat IPC: 0.303747 cumulative IPC: 0.299881 (Simulation time: 0 hr 1 min 49 sec) 
+Finished CPU 0 instructions: 30000003 cycles: 100039677 cumulative IPC: 0.299881 (Simulation time: 0 hr 1 min 49 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.299881 instructions: 30000003 cycles: 100039677
+L1D TOTAL     ACCESS:   11706549  HIT:    7132838  MISS:    4573711
+L1D LOAD      ACCESS:    6875574  HIT:    5657130  MISS:    1218444
+L1D RFO       ACCESS:     639939  HIT:     468421  MISS:     171518
+L1D PREFETCH  ACCESS:    4191036  HIT:    1007287  MISS:    3183749
+L1D WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1D PREFETCH  REQUESTED:    8196567  ISSUED:    4913833  USEFUL:     256976  USELESS:    2926822
+L1D AVERAGE MISS LATENCY: 130.581 cycles
+L1I TOTAL     ACCESS:    3250770  HIT:    3250770  MISS:          0
+L1I LOAD      ACCESS:    3250770  HIT:    3250770  MISS:          0
+L1I RFO       ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1I WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1I AVERAGE MISS LATENCY: -nan cycles
+L2C TOTAL     ACCESS:    9620851  HIT:    2300677  MISS:    7320174
+L2C LOAD      ACCESS:    1132780  HIT:     131267  MISS:    1001513
+L2C RFO       ACCESS:     171495  HIT:      87395  MISS:      84100
+L2C PREFETCH  ACCESS:    7855743  HIT:    1622522  MISS:    6233221
+L2C WRITEBACK ACCESS:     460833  HIT:     459493  MISS:       1340
+L2C PREFETCH  REQUESTED:   12433729  ISSUED:   12181166  USEFUL:      56333  USELESS:    6177135
+L2C AVERAGE MISS LATENCY: 149.945 cycles
+LLC TOTAL     ACCESS:    7618397  HIT:    2665611  MISS:    4952786
+LLC LOAD      ACCESS:     933561  HIT:     344207  MISS:     589354
+LLC RFO       ACCESS:      84093  HIT:      43208  MISS:      40885
+LLC PREFETCH  ACCESS:    6301163  HIT:    1984265  MISS:    4316898
+LLC WRITEBACK ACCESS:     299580  HIT:     293931  MISS:       5649
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:     181877  USELESS:    4135364
+LLC AVERAGE MISS LATENCY: 177.844 cycles
+Major fault: 0 Minor fault: 9155
+
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:    3305160  ROW_BUFFER_MISS:    1638891
+ DBUS_CONGESTED:    3181627
+ WQ ROW_BUFFER_HIT:      41124  ROW_BUFFER_MISS:     207019  FULL:          0
+
+ AVG_CONGESTED_CYCLE: 6
+
+CPU 0 Branch Prediction Accuracy: 94.6568% MPKI: 7.88617 Average ROB Occupancy at Mispredict: 82.3435
+
+Branch types
+NOT_BRANCH: 25571916 85.2397%
+BRANCH_DIRECT_JUMP: 1260950 4.20317%
+BRANCH_INDIRECT: 0 0%
+BRANCH_CONDITIONAL: 3165356 10.5512%
+BRANCH_DIRECT_CALL: 744 0.00248%
+BRANCH_INDIRECT_CALL: 0 0%
+BRANCH_RETURN: 744 0.00248%
+BRANCH_OTHER: 0 0%
+
