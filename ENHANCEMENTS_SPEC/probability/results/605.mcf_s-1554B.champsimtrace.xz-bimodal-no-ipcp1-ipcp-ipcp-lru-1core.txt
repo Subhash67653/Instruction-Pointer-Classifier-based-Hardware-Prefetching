@@ -1,0 +1,79 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 30000000
+Simulation Instructions: 30000000
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+CPU 0 runs ../traces//605.mcf_s-1554B.champsimtrace.xz
+CPU 0 Bimodal branch predictor
+Heartbeat CPU 0 instructions: 10000001 cycles: 4572973 heartbeat IPC: 2.18676 cumulative IPC: 2.18676 (Simulation time: 0 hr 0 min 35 sec) 
+Heartbeat CPU 0 instructions: 20000000 cycles: 9160910 heartbeat IPC: 2.17963 cumulative IPC: 2.18319 (Simulation time: 0 hr 1 min 9 sec) 
+Heartbeat CPU 0 instructions: 30000003 cycles: 13790244 heartbeat IPC: 2.16014 cumulative IPC: 2.17545 (Simulation time: 0 hr 1 min 41 sec) 
+
+Warmup complete CPU 0 instructions: 30000003 cycles: 13790244 (Simulation time: 0 hr 1 min 41 sec) 
+
+Heartbeat CPU 0 instructions: 40000001 cycles: 49469657 heartbeat IPC: 0.280274 cumulative IPC: 0.280274 (Simulation time: 0 hr 2 min 38 sec) 
+Heartbeat CPU 0 instructions: 50000001 cycles: 85338407 heartbeat IPC: 0.278794 cumulative IPC: 0.279532 (Simulation time: 0 hr 3 min 35 sec) 
+Heartbeat CPU 0 instructions: 60000000 cycles: 121302598 heartbeat IPC: 0.278054 cumulative IPC: 0.279038 (Simulation time: 0 hr 4 min 34 sec) 
+Finished CPU 0 instructions: 30000001 cycles: 107512355 cumulative IPC: 0.279038 (Simulation time: 0 hr 4 min 34 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.279038 instructions: 30000001 cycles: 107512355
+L1D TOTAL     ACCESS:   17837489  HIT:   11598154  MISS:    6239335
+L1D LOAD      ACCESS:    9919761  HIT:    7032394  MISS:    2887367
+L1D RFO       ACCESS:    1616761  HIT:    1526717  MISS:      90044
+L1D PREFETCH  ACCESS:    6300967  HIT:    3039043  MISS:    3261924
+L1D WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1D PREFETCH  REQUESTED:   19492901  ISSUED:   10378324  USEFUL:    1627492  USELESS:    1634492
+L1D AVERAGE MISS LATENCY: 98.7872 cycles
+L1I TOTAL     ACCESS:    7484758  HIT:    7484758  MISS:          0
+L1I LOAD      ACCESS:    7484758  HIT:    7484758  MISS:          0
+L1I RFO       ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1I WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1I AVERAGE MISS LATENCY: -nan cycles
+L2C TOTAL     ACCESS:   11257494  HIT:    4073611  MISS:    7183883
+L2C LOAD      ACCESS:    2083484  HIT:     567708  MISS:    1515776
+L2C RFO       ACCESS:      89920  HIT:        456  MISS:      89464
+L2C PREFETCH  ACCESS:    8971911  HIT:    3393569  MISS:    5578342
+L2C WRITEBACK ACCESS:     112179  HIT:     111878  MISS:        301
+L2C PREFETCH  REQUESTED:   12215026  ISSUED:   12156940  USEFUL:     567566  USELESS:    5012058
+L2C AVERAGE MISS LATENCY: 169.244 cycles
+LLC TOTAL     ACCESS:    7295485  HIT:     112241  MISS:    7183244
+LLC LOAD      ACCESS:     912541  HIT:        379  MISS:     912162
+LLC RFO       ACCESS:      89439  HIT:         32  MISS:      89407
+LLC PREFETCH  ACCESS:    6181603  HIT:        229  MISS:    6181374
+LLC WRITEBACK ACCESS:     111902  HIT:     111601  MISS:        301
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:         51  USELESS:    6181987
+LLC AVERAGE MISS LATENCY: 143.981 cycles
+Major fault: 0 Minor fault: 6272
+
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:    5633112  ROW_BUFFER_MISS:    1549293
+ DBUS_CONGESTED:    4544123
+ WQ ROW_BUFFER_HIT:      18582  ROW_BUFFER_MISS:      92937  FULL:          0
+
+ AVG_CONGESTED_CYCLE: 6
+
+CPU 0 Branch Prediction Accuracy: 97.7118% MPKI: 4.16443 Average ROB Occupancy at Mispredict: 48.3593
+
+Branch types
+NOT_BRANCH: 24540137 81.8005%
+BRANCH_DIRECT_JUMP: 1230756 4.10252%
+BRANCH_INDIRECT: 0 0%
+BRANCH_CONDITIONAL: 4228616 14.0954%
+BRANCH_DIRECT_CALL: 240 0.0008%
+BRANCH_INDIRECT_CALL: 0 0%
+BRANCH_RETURN: 240 0.0008%
+BRANCH_OTHER: 0 0%
+
