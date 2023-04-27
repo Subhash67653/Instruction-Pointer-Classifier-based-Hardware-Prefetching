@@ -1,0 +1,78 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 30000000
+Simulation Instructions: 30000000
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+CPU 0 runs ../traces//602.gcc_s-734B.champsimtrace.xz
+CPU 0 Bimodal branch predictor
+Heartbeat CPU 0 instructions: 10000001 cycles: 5015409 heartbeat IPC: 1.99386 cumulative IPC: 1.99386 (Simulation time: 0 hr 0 min 15 sec) 
+Heartbeat CPU 0 instructions: 20000002 cycles: 10021548 heartbeat IPC: 1.99755 cumulative IPC: 1.9957 (Simulation time: 0 hr 0 min 31 sec) 
+Heartbeat CPU 0 instructions: 30000000 cycles: 15029816 heartbeat IPC: 1.9967 cumulative IPC: 1.99603 (Simulation time: 0 hr 0 min 47 sec) 
+
+Warmup complete CPU 0 instructions: 30000004 cycles: 15029817 (Simulation time: 0 hr 0 min 47 sec) 
+
+Heartbeat CPU 0 instructions: 40000002 cycles: 36194155 heartbeat IPC: 0.472493 cumulative IPC: 0.472493 (Simulation time: 0 hr 1 min 0 sec) 
+Heartbeat CPU 0 instructions: 50000000 cycles: 56919218 heartbeat IPC: 0.482507 cumulative IPC: 0.477448 (Simulation time: 0 hr 1 min 13 sec) 
+Heartbeat CPU 0 instructions: 60000000 cycles: 77650846 heartbeat IPC: 0.482355 cumulative IPC: 0.479072 (Simulation time: 0 hr 1 min 26 sec) 
+Finished CPU 0 instructions: 30000000 cycles: 62621041 cumulative IPC: 0.479072 (Simulation time: 0 hr 1 min 26 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.479072 instructions: 30000000 cycles: 62621041
+L1D TOTAL     ACCESS:    9104550  HIT:    8619915  MISS:     484635
+L1D LOAD      ACCESS:    6103309  HIT:    5618677  MISS:     484632
+L1D RFO       ACCESS:    3001241  HIT:    3001238  MISS:          3
+L1D PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1D WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1D PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1D AVERAGE MISS LATENCY: 69.6746 cycles
+L1I TOTAL     ACCESS:    4530081  HIT:    4530081  MISS:          0
+L1I LOAD      ACCESS:    4530081  HIT:    4530081  MISS:          0
+L1I RFO       ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1I WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1I AVERAGE MISS LATENCY: -nan cycles
+L2C TOTAL     ACCESS:     488269  HIT:     244894  MISS:     243375
+L2C LOAD      ACCESS:     484632  HIT:     241259  MISS:     243373
+L2C RFO       ACCESS:          3  HIT:          1  MISS:          2
+L2C PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L2C WRITEBACK ACCESS:       3634  HIT:       3634  MISS:          0
+L2C PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L2C AVERAGE MISS LATENCY: 108.81 cycles
+LLC TOTAL     ACCESS:     244757  HIT:        891  MISS:     243866
+LLC LOAD      ACCESS:     243373  HIT:         36  MISS:     243337
+LLC RFO       ACCESS:          2  HIT:          0  MISS:          2
+LLC PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+LLC WRITEBACK ACCESS:       1382  HIT:        855  MISS:        527
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+LLC AVERAGE MISS LATENCY: 78.6147 cycles
+Major fault: 0 Minor fault: 5904
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:     224573  ROW_BUFFER_MISS:      18766
+ DBUS_CONGESTED:        720
+ WQ ROW_BUFFER_HIT:        451  ROW_BUFFER_MISS:        970  FULL:          0
+
+ AVG_CONGESTED_CYCLE: 6
+
+CPU 0 Branch Prediction Accuracy: 94.708% MPKI: 12.5442 Average ROB Occupancy at Mispredict: 54.5229
+
+Branch types
+NOT_BRANCH: 22888430 76.2948%
+BRANCH_DIRECT_JUMP: 746018 2.48673%
+BRANCH_INDIRECT: 0 0%
+BRANCH_CONDITIONAL: 5612850 18.7095%
+BRANCH_DIRECT_CALL: 376184 1.25395%
+BRANCH_INDIRECT_CALL: 0 0%
+BRANCH_RETURN: 376184 1.25395%
+BRANCH_OTHER: 0 0%
+
