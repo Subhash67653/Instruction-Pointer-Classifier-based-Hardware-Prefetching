@@ -185,7 +185,7 @@ int update1_conf(int stride, int pred_stride, int conf,int max_conf){
     } else {
         conf--;
         
-        if(2*conf < max_conf)
+        if(5*conf < 2*max_conf)
           { conf = 0;}
     }
 
