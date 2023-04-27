@@ -2,7 +2,6 @@
 prefetchers play an important role in hiding long data access latency
 
 This project is done as part of course cs230 instructed by [Prof. Biswa]
-
 we attempted to categorically evaluate the existing prefetchers in champsim and added some enhancements
 
 to this paper https://dpc3.compas.cs.stonybrook.edu/pdfs/Bouquet.pdf 
