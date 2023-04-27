@@ -1,0 +1,79 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 30000000
+Simulation Instructions: 30000000
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+CPU 0 runs ../traces//pr-5.trace.gz
+CPU 0 Bimodal branch predictor
+Heartbeat CPU 0 instructions: 10000002 cycles: 3437686 heartbeat IPC: 2.90893 cumulative IPC: 2.90893 (Simulation time: 0 hr 0 min 11 sec) 
+Heartbeat CPU 0 instructions: 20000001 cycles: 11917796 heartbeat IPC: 1.17923 cumulative IPC: 1.67816 (Simulation time: 0 hr 0 min 26 sec) 
+Heartbeat CPU 0 instructions: 30000000 cycles: 22005045 heartbeat IPC: 0.99135 cumulative IPC: 1.36332 (Simulation time: 0 hr 0 min 45 sec) 
+
+Warmup complete CPU 0 instructions: 30000001 cycles: 22005046 (Simulation time: 0 hr 0 min 45 sec) 
+
+Heartbeat CPU 0 instructions: 40000001 cycles: 267084732 heartbeat IPC: 0.0408031 cumulative IPC: 0.0408031 (Simulation time: 0 hr 2 min 44 sec) 
+Heartbeat CPU 0 instructions: 50000003 cycles: 511635705 heartbeat IPC: 0.0408913 cumulative IPC: 0.0408471 (Simulation time: 0 hr 4 min 43 sec) 
+Heartbeat CPU 0 instructions: 60000000 cycles: 747923758 heartbeat IPC: 0.0423212 cumulative IPC: 0.0413269 (Simulation time: 0 hr 6 min 38 sec) 
+Finished CPU 0 instructions: 30000000 cycles: 725918713 cumulative IPC: 0.0413269 (Simulation time: 0 hr 6 min 38 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.0413269 instructions: 30000000 cycles: 725918713
+L1D TOTAL     ACCESS:   39305206  HIT:    6236830  MISS:   33068376
+L1D LOAD      ACCESS:    9997424  HIT:    4862627  MISS:    5134797
+L1D RFO       ACCESS:     357804  HIT:     357804  MISS:          0
+L1D PREFETCH  ACCESS:   28949978  HIT:    1016399  MISS:   27933579
+L1D WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1D PREFETCH  REQUESTED:   30388695  ISSUED:   30180460  USEFUL:     513647  USELESS:   27419883
+L1D AVERAGE MISS LATENCY: 131.485 cycles
+L1I TOTAL     ACCESS:    9041616  HIT:    9041616  MISS:          0
+L1I LOAD      ACCESS:    9041616  HIT:    9041616  MISS:          0
+L1I RFO       ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1I WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1I AVERAGE MISS LATENCY: -nan cycles
+L2C TOTAL     ACCESS:   51471249  HIT:    7608883  MISS:   43862366
+L2C LOAD      ACCESS:    4896885  HIT:     605358  MISS:    4291527
+L2C RFO       ACCESS:          0  HIT:          0  MISS:          0
+L2C PREFETCH  ACCESS:   46547315  HIT:    6977372  MISS:   39569943
+L2C WRITEBACK ACCESS:      27049  HIT:      26153  MISS:        896
+L2C PREFETCH  REQUESTED:  103918601  ISSUED:  103916330  USEFUL:     302752  USELESS:   39266417
+L2C AVERAGE MISS LATENCY: 143.403 cycles
+LLC TOTAL     ACCESS:   43877337  HIT:   11933052  MISS:   31944285
+LLC LOAD      ACCESS:    4198428  HIT:    1208562  MISS:    2989866
+LLC RFO       ACCESS:          0  HIT:          0  MISS:          0
+LLC PREFETCH  ACCESS:   39663039  HIT:   10709162  MISS:   28953877
+LLC WRITEBACK ACCESS:      15870  HIT:      15328  MISS:        542
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:     572184  USELESS:   28380884
+LLC AVERAGE MISS LATENCY: 155.9 cycles
+Major fault: 0 Minor fault: 12619
+
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:   17667592  ROW_BUFFER_MISS:   14276081
+ DBUS_CONGESTED:   23324552
+ WQ ROW_BUFFER_HIT:       1923  ROW_BUFFER_MISS:      10163  FULL:          0
+
+ AVG_CONGESTED_CYCLE: 6
+
+CPU 0 Branch Prediction Accuracy: 96.3314% MPKI: 7.00393 Average ROB Occupancy at Mispredict: 133.14
+
+Branch types
+NOT_BRANCH: 24272342 80.9078%
+BRANCH_DIRECT_JUMP: 0 0%
+BRANCH_INDIRECT: 0 0%
+BRANCH_CONDITIONAL: 5727410 19.0914%
+BRANCH_DIRECT_CALL: 0 0%
+BRANCH_INDIRECT_CALL: 0 0%
+BRANCH_RETURN: 0 0%
+BRANCH_OTHER: 0 0%
+
