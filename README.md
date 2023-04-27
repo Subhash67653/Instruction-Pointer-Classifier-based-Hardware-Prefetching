@@ -27,14 +27,15 @@ The simulation results for all the prefetchers are in /resulst_30M folder
  > ./install-champsim.sh
 ```
 
-* Install traces from below links 
+###Install traces from below links
+
 https://utexas.app.box.com/s/2k54kp8zvrqdfaa8cdhfquvcxwh7yn85/folder/132804598561
 
 https://dpc3.compas.cs.stonybrook.edu/champsim-traces/speccpu/
 
 https://www.dropbox.com/sh/xs2t9y4cuqlgrlp/AACpzGOj6BcSB-BUolGaBjbta?dl=0
 
- running  for each enhancement
+ ###running  for each enhancement
 
 For graph traces go to /ENHANCEMENTS_GRAPHS/(select one folder)/code/ 
 
