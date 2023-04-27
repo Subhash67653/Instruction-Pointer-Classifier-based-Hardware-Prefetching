@@ -1,5 +1,4 @@
 # Instruction-Pointer-Classifier-based-Hardware-Prefetching
-prefetchers play an important role in hiding long data access latency
 
 This project is done as part of course cs230 instructed by [Prof. Biswa]
 we attempted to categorically evaluate the existing prefetchers in champsim and added some enhancements
